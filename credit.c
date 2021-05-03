@@ -73,11 +73,15 @@ int main(void)
 
     //get number, check length
     long num;
-    do {
+
     num = get_long("Number: ");
-    //printf("number is");
-    }
-    while (num >= 5600000000000000 || (num < 340000000000000 && num >= 5000000000000) || num < 4000000000000);
+
+    // do {
+    // num = get_long("Number: ");
+    // //printf("number is");
+    // }
+    // while (num >= 5600000000000000 || (num < 340000000000000 && num >= 5000000000000) || num < 4000000000000);
+    // //while (num >= 5600000000000000 || num < 4000000000000);
 
 
     //test for mastercard
@@ -85,7 +89,7 @@ int main(void)
     {
         cardtype = 'm';
 
-        //printf("this is a mastercard");
+        printf("this is a mastercard");
     }
 
     //test for visa
@@ -115,14 +119,14 @@ int main(void)
     if (shortvisa)
     {
         len = 13;
-        long numtest = 1234567890123;
+        //long numtest = 1234567890123;
 
         //int dig12 = numtest%
 
-        int dig11 = numtest%100;
-        dig11 = dig11 / 10;
+        //int dig11 = numtest%100;
+        //dig11 = dig11 / 10;
 
-        printf("\n dig 11 = %i", dig11);
+        //printf("\n dig 11 = %i", dig11);
     }
     else if(cardtype == 'a')
     {
@@ -136,10 +140,10 @@ int main(void)
     // multiply every other digit by 2 and add digits together, starting with second last digit
     long runTotal = multiplyadddigs (len, false, true, num);
 
-    // multiply every other digit by 2 and add digits together, starting with second last digit
+    // multiply every other digit by 2 and add digits together, starting with last digit
     runTotal = runTotal + multiplyadddigs (len, true, false, num);
 
-    //printf("\nfinaltotal = %ld\n", runTotal);
+    printf("\nfinaltotal = %ld\n", runTotal);
 
     //check final digit
     if (runTotal % 10 == 0){
